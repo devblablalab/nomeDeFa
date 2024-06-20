@@ -1,87 +1,165 @@
 
+:root {
+    --dark: #0C0C0C;
+    --primary: #3BE15A;
+    --light :#ffff;
+    --gray: #5B5B5B
+}
+
 * {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: black;
-    color:white;
+    background-color: var(--dark);
     padding:0;
     margin: 0;
     box-sizing: border-box;
     font-family: 'Area Normal';
 }
 
-header {
-
-    width: 100%;
-    padding: 1em;
-
+body {
+    background-color: var(--dark);  
 }
-
-header .container {
-    display: flex;
-    justify-content: space-between;
-}
-header .container img{
-  width: 10rem;
-
-}
-
-.formulario {
-    width: 100%;
-    padding: 1em;
-
-}
-
-.formulario .container form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 1em;
-    font-size: 3em;
-    
-}
-.formulario .container form label{
-  text-align: left;
-    
-}
-
-.formulario .container input {
-    border: none;
-    border-bottom: 2px dashed gray;
-    font-size: 1em;
-    text-align: left;
-}
-.formulario .container input:focus {
-    outline: none;
-}
-
 
 .container {
     max-width: 1300px;
     margin: 0 auto;
 }
-.saibaMais {
-    background-color: gray;
-    padding: 10px 20px;
-    font-size: 20px;
-    font-weight: bold;
-    border-radius: 5px;
 
-    
+header#main-header {
+    width: 100%;
+    padding: 1em 2em;
 }
 
+header#main-header .container {
+    display: flex;
+    justify-content: space-between;
+}
+header#main-header .container .brand {
+  width: 10rem;
+}
 
+header#main-header .container .brand img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.form-container {
+    width: 100%;
+    padding: 1em;
+}
+
+.form-container .container,
+.form-container .container form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px;
+}
+
+.form-container .container form {
+    gap: 1em;
+    font-size: 3em;
+}
+
+.form-container .container form label{
+  text-align: left;
+  color: var(--light)
+}
+
+.form-container .container form input,
+.form-container .container form button,
+.form-container .container form select {
+    border: none;
+}
+
+.form-container .container .formInput {
+    border-bottom: 2px dashed gray;
+    font-size: 1em;
+    text-align: left;
+    color: var(--primary);
+    width: 100%;
+}
+
+.form-container .container input:focus {
+    outline: none;
+}
+
+.form-container .container .actions {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.form-container .container .actions .control {
+    flex: 1;
+    font-size: 18px;
+    font-weight: 600;
+    padding: 10px 15px;
+    background: var(--gray);
+    color: var(--dark);
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.form-container .container .actions .control.active-control,
+.form-container .container .actions .control.active-control option {
+    background: var(--primary);
+    color: var(--dark);
+}
+
+.form-container .container .actions select.control {
+    border-radius: 8px;
+}
+
+.form-container .container .actions select.control option {
+    background: var(--gray);
+    color: var(--dark);
+    font-weight: 600;
+}
+
+.form-container .container .actions button.control {
+    border-radius: 18px;
+    transition: opacity .2s;
+}
+
+.form-container .container .actions button.control:hover {
+    opacity: .6;
+}
+
+.saibaMais {
+    background-color: var(--gray);
+    color: var(--light);
+    padding: 8px 20px;
+    font-size: 28px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all .2s;
+}
+
+.saibaMais:hover {
+    background: var(--light);
+    color: var(--gray);
+}
 
 .grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 10px; /* Espaço entre os itens do grid */
+    gap: 10px;
     padding: 10px;
     text-align: center;
     font-size: 12px;
 }
 
-.formulario form{
+.form-container form{
     display: flex;
     flex-direction: column;
+}
+
+@media screen and (max-width:767px) {
+    .container {
+        max-width: 100%;
+    }
 }

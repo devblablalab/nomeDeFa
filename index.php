@@ -19,7 +19,7 @@
 
     <div class="form-container">
         <div class="container">
-            <form action="registraFa.php" method='POST'>
+            <form action="create.php" method='POST'>
                 <label for="">
                     <p class="formLabel">Quem é fã de</p>
                     <input data-control-target="#categories" placeholder="digite aqui" name="artista" class="formInput" type="text">

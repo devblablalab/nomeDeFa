@@ -1,7 +1,9 @@
 <?php
-  require './Http.php';
-  require './FandomSuggestion.php';
 
+  use classes\Http;
+  use classes\FandomSuggestion;
+  require './bootstrap.php';
+  
   $requestData = Http::getRequestData();
   $suggestion = @$requestData['suggestion'] ?? '';
   $artist = @$requestData['artist'] ?? '';

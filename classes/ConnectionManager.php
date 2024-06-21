@@ -1,4 +1,7 @@
 <?php
+namespace classes;
+
+use PDO;
 
 class ConnectionManager {
     private static $instance = null;
@@ -6,14 +9,15 @@ class ConnectionManager {
 
     private function __construct() 
     {
-        $dsn = 'mysql:host=localhost;dbname=nomedefa';
-        $username = 'root';
-        $password = '';
+        $dbName = $_ENV['dbname'] ?? '';
+        $dsn = "mysql:host=localhost;dbname={$dbName}";
+        $username = $_ENV['dbusername'];
+        $password = $_ENV['dbpassword'];
 
         try {
             $this->connection = new PDO($dsn, $username, $password);
             $this->connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        } catch (PDOException $e) {
+        } catch (\PDOException $e) {
             echo 'Connection failed: ' . $e->getMessage();
         }
     }

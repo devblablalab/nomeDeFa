@@ -1,5 +1,6 @@
 <?php
 
+namespace classes;
 class Http {
   public static function getRequestData()
   {

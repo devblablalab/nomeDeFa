@@ -1,7 +1,9 @@
 <?php
 
-require './utils.php';
-require './ConnectionManager.php';
+namespace classes;
+
+use classes\ConnectionManager;
+use PDO;
 
 class FandomSuggestion {
     private string $suggestion;

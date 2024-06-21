@@ -9,3 +9,13 @@ function some_item_is_empty(array $items) {
 
     return count($emptyItems) > 0;
 }
+
+function dd() {
+    $args = func_get_args();
+
+    foreach ($args as $arg) {
+        var_dump($arg);
+    }
+
+    die();
+}

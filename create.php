@@ -11,7 +11,13 @@
   $fandomWasInserted = $fandomSuggestion->save();
 
   if(!$fandomWasInserted) {
-    return Http::sendResponseJson([], 400);
+    return Http::sendResponseJson([
+      'message' => 'Não foi possível incluir o fandom',
+      'data' => []
+    ], 400);
   }
 
-  return Http::sendResponseJson($requestData, 201);
+  return Http::sendResponseJson([
+    'message' => 'Fandom inserido com sucesso!',
+    'data' => $requestData
+  ], 201);

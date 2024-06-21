@@ -20,19 +20,16 @@ class Http {
     return $payload;
   }
 
-  public static function sendResponseJson($data, $statusCode = 200)
+  public static function sendResponseJson(array $response, int $statusCode = 200)
   {
     header("Content-type: application/json");
     try {
       http_response_code($statusCode);
-      die(json_encode([
-        'type' => $statusCode < 400 ? 'success' : 'error',
-        'data' => $data
-      ]));
-    } catch (\Excecption $e) {
+      die(json_encode($response));
+    } catch (\Exception $e) {
       http_response_code(400);
       die(json_encode([
-        'type' => 'error',
+        'message' => $e->getMessage(),
         'data' => []
       ]));
     }

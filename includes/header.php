@@ -11,7 +11,7 @@
     <header id="main-header">
         <div class="container">
             <div class="brand">
-                <img src="assets/logoNomeDeFa.svg" alt="logo">
+                <img src="./public/assets/logoNomeDeFa.svg" alt="logo">
             </div>
             <div class="saibaMais">?</div>
         </div>

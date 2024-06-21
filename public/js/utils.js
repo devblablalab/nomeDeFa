@@ -1,3 +1,18 @@
+let lastRequestTime = 0;
+
+export function rateLimitCheck(message) {
+  const now = Date.now();
+  const timeSinceLastRequest = now - lastRequestTime;
+
+  if (timeSinceLastRequest < 5000) {
+    throw new Error(message)
+  }
+}
+
+export function updateLastRequestTime() {
+  lastRequestTime = Date.now();
+}
+
 export function enableTargetControl(control) {
     if(!control?.dataset?.controlTarget) return;
 

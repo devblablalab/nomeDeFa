@@ -1,19 +1,4 @@
-import { enableTargetControl } from './utils.js';
-
-let lastRequestTime = 0;
-
-function rateLimitCheck(message) {
-  const now = Date.now();
-  const timeSinceLastRequest = now - lastRequestTime;
-
-  if (timeSinceLastRequest < 5000) {
-    throw new Error(message)
-  }
-}
-
-function updateLastRequestTime() {
-  lastRequestTime = Date.now();
-}
+import { enableTargetControl,rateLimitCheck,updateLastRequestTime } from './utils.js';
 
 export function handleChangeFormInput(e) {
     const { currentTarget } = e;
@@ -23,7 +8,12 @@ export function handleChangeFormInput(e) {
 export async function handleClickSendData(e) {
   e.preventDefault();
 
+  const { currentTarget } = e;
+
   try {
+    currentTarget.disabled = true;
+    currentTarget.textContent = 'Adicionando...';
+    
     rateLimitCheck('Muitas solicitações foram realizadas em um curto período de tempo. Por favor tente novamente daqui a 5 segundos.');
 
     updateLastRequestTime();
@@ -46,5 +36,8 @@ export async function handleClickSendData(e) {
     if(!response.ok) throw new Error(json?.message);
   } catch (error) {
     alert(error.message?.trim());
+  } finally {
+    currentTarget.disabled = false;
+    currentTarget.textContent = 'Adicionar';
   }
 }

@@ -3,6 +3,13 @@
   use classes\Http;
   use classes\FandomSuggestion;
   require './bootstrap.php';
+
+  if (request_blocker()) {
+    return Http::sendResponseJson([
+      'message' => 'Número de solicitações excedidas, aguardade alguns segundos para continuar',
+      'data' => []
+    ], 429);
+  }
   
   $requestData = Http::getRequestData();
   $suggestion = @$requestData['suggestion'] ?? '';

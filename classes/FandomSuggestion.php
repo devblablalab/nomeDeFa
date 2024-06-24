@@ -44,6 +44,22 @@ class FandomSuggestion {
         $this->categoryId = $categoryId;
     }
 
+    public static function getActiveSuggestions() : array {
+        $connectionManager = ConnectionManager::getInstance();
+        if( empty($connectionManager) ) return [];	
+
+        $sql = "SELECT 
+        fs.suggestion, fs.artist_name,c.category
+        FROM fandom_suggestion fs 
+        INNER JOIN categories c ON fs.fk_id_category = c.id_category
+        WHERE fs.active = 1";
+        
+        $stmt = $connectionManager->getConnection()->prepare($sql);
+        $stmt->execute();
+
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
     public function save() 
     {
         try {

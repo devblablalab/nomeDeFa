@@ -1,9 +1,10 @@
+<?php include './includes/header.php'; ?>
 <?php 
     use classes\FandomSuggestion;
-    require './bootstrap.php';
     $activeSuggestions = FandomSuggestion::getActiveSuggestions();
 ?>
-<?php include './includes/header.php'; ?>
+
+<?php include './includes/alert-error.php'; ?>
 <div class="form-container">
     <div class="container">
         <form action="create.php" method='POST'>
@@ -30,7 +31,7 @@
     </div>
 </div>
 <div class="container">
-    <table id="suggestions-table" style="color:#fff;">
+    <table id="suggestions-table">
         <thead>
             <tr>
                 <th>Quem</th>

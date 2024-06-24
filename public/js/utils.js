@@ -30,4 +30,25 @@ export function enableTargetControl(control) {
     targetControl.disabled = controlOptions['disabled'];
 }
 
+function alertActionCommon(message = '', type = '', action = 'add') {
+  const selector = type?.trim()?.length == 0 ? '[data-alert-target]' : `[data-alert-target="${type}"]`;
+  const currentAlert = document.querySelector(selector);
+  const hasValidAction = ['add','remove'].includes(action);
+
+  if(!currentAlert || !hasValidAction) return;
+
+  const alertText = currentAlert.querySelector('.text');
+
+  alertText.textContent = message;
+  currentAlert.classList[action]('active');
+}
+
+export function triggerAlert(message = '', type = 'error') {  
+  alertActionCommon(message,type,'add');
+}
+
+export function dismissAlert(type = '') {
+  alertActionCommon('',type,'remove');
+}
+
  

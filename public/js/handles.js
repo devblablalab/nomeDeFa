@@ -1,4 +1,4 @@
-import { enableTargetControl,rateLimitCheck,updateLastRequestTime } from './utils.js';
+import { enableTargetControl,rateLimitCheck,updateLastRequestTime,triggerAlert,dismissAlert } from './utils.js';
 
 export function handleChangeFormInput(e) {
     const { currentTarget } = e;
@@ -11,6 +11,7 @@ export async function handleClickSendData(e) {
   const { currentTarget } = e;
 
   try {
+    dismissAlert();  
     currentTarget.disabled = true;
     currentTarget.textContent = 'Adicionando...';
     
@@ -33,11 +34,21 @@ export async function handleClickSendData(e) {
   
     const response = await fetch(form.action, options);
     const json = await response.json();
+
     if(!response.ok) throw new Error(json?.message);
   } catch (error) {
-    alert(error.message?.trim());
+    triggerAlert(error.message?.trim(),'error');
   } finally {
     currentTarget.disabled = false;
     currentTarget.textContent = 'Adicionar';
   }
+}
+
+export function handleClickCloseAlert(e) {
+  const { currentTarget } = e;
+
+  const selector = currentTarget.dataset.closeAlert || 'error';
+  const alertParent = document.querySelector(`[data-alert-target="${selector}"]`);
+
+  if(alertParent) alertParent.classList.remove('active');
 }

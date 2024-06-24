@@ -1,6 +1,4 @@
-<?php 
-    require './bootstrap.php';
-?>
+<?php require './bootstrap.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,7 +11,7 @@
     <header id="main-header">
         <div class="container">
             <div class="brand">
-                <img src="<?= get_url() . 'public/assets/logoNomeDeFa.svg' ?>" alt="logo">
+                <?php include 'svg/brand.php'; ?>
             </div>
             <div class="saibaMais">?</div>
         </div>

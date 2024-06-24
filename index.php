@@ -5,6 +5,7 @@
 ?>
 
 <?php include './includes/alert-error.php'; ?>
+<?php include './includes/alert-warning.php'; ?>
 <div class="form-container">
     <div class="container">
         <form action="create.php" method='POST'>
@@ -31,10 +32,11 @@
     </div>
 </div>
 <div class="container">
+    <?php include './includes/success-container.php'; ?>
     <table id="suggestions-table">
         <thead>
             <tr>
-                <th>Quem</th>
+                <th style="text-decoration:underline;">Quem</th>
                 <th>Fãs</th>
                 <th>Categoria</th>
             </tr>

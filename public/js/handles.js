@@ -1,4 +1,12 @@
-import { enableTargetControl,rateLimitCheck,updateLastRequestTime,triggerAlert,dismissAlert } from './utils.js';
+import { 
+  enableTargetControl,
+  rateLimitCheck,
+  updateLastRequestTime,
+  triggerAlert,
+  dismissAlert,
+  formHasEmptyField,
+  toggleFormContent 
+} from './utils.js';
 
 export function handleChangeFormInput(e) {
     const { currentTarget } = e;
@@ -10,8 +18,13 @@ export async function handleClickSendData(e) {
 
   const { currentTarget } = e;
 
+  dismissAlert(); 
+
+  if(formHasEmptyField()) {
+    return triggerAlert('Preencha todos os campos para adicionar a sugestão','warning');
+  }
+
   try {
-    dismissAlert();  
     currentTarget.disabled = true;
     currentTarget.textContent = 'Adicionando...';
     
@@ -36,6 +49,9 @@ export async function handleClickSendData(e) {
     const json = await response.json();
 
     if(!response.ok) throw new Error(json?.message);
+
+    // Success
+    toggleFormContent(true);
   } catch (error) {
     triggerAlert(error.message?.trim(),'error');
   } finally {

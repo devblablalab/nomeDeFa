@@ -51,4 +51,19 @@ export function dismissAlert(type = '') {
   alertActionCommon('',type,'remove');
 }
 
+export function formHasEmptyField() {
+  const formInputs = document.querySelectorAll('.form-container .formInput') || [];
+  return Array.from(formInputs).some(input => input.value.trim().length == 0);
+}
+
+export function toggleFormContent(hideForm = true) {
+  const formContainer = document.querySelector('.form-container');
+  const successContainer = document.querySelector('.success-container');
+
+  if(!successContainer) return;
+
+  formContainer.classList[hideForm ? 'add' : 'remove']('display-none');
+  successContainer.classList[hideForm ? 'remove' : 'add']('display-none');
+}
+
  

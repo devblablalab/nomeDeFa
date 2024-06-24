@@ -21,9 +21,13 @@ export function enableTargetControl(control) {
 
     if(!targetControl) return;
 
-    const classMethod = control.value.trim().length > 0 ? 'add' : 'remove'; 
+    const controlOptions = {
+      class: control.value.trim().length > 0 ? 'add' : 'remove',
+      disabled: control.value.trim().length > 0 ? false : true
+    }
 
-    targetControl.classList[classMethod]('active-control');
+    targetControl.classList[controlOptions['class']]('active-control');
+    targetControl.disabled = controlOptions['disabled'];
 }
 
  

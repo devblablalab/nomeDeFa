@@ -45,8 +45,7 @@ function request_blocker()
     $blockIt = [];
     $user    = [];
 
-    $user[] = isset($_SERVER['REMOTE_ADDR']) ? $_SERVER['REMOTE_ADDR'] : 'IP_unknown';
-    $user[0] = str_replace($user[0],'::','');
+    $user[] = isset($_SERVER['REMOTE_ADDR']) ? str_replace($_SERVER['REMOTE_ADDR'],'::','') : 'IP_unknown';
     $user[] = isset($_SERVER['HTTP_USER_AGENT']) ? $_SERVER['HTTP_USER_AGENT'] : '';
 
     $botFile = $dir . substr($user[0], 0, 8) . '_' . substr(md5(join('', $user)), 0, 5) . '.txt';

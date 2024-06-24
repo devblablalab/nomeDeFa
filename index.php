@@ -17,14 +17,14 @@
             </label>
 
             <div class="actions">
-                <select id="categories" class="control" name="category">
+                <select id="categories" class="control" name="category" disabled>
                     <option value="1">Internet</option>
                     <option value="2">Artes</option>
                     <option value="3">Esportes</option>
                     <option value="4">Negócios</option>
                     <option value="5">Outros</option>
                 </select>
-                <button id="send-control" class="control" type="submit">Adicionar</button>
+                <button id="send-control" class="control" type="submit" disabled>Adicionar</button>
             </div>
         </form>
     </div>

@@ -217,8 +217,8 @@ header .container {
     align-items: center;
     background-color: var(--gray);
     color: var(--light);
-    padding: 5px 15px;
-    font-size: 34px;
+    padding: 3px 13px;
+    font-size: 28px;
     font-weight: 700;
     max-height: 50px;
     border-radius: 5px;
@@ -390,9 +390,6 @@ header#main-header {
 
 @media screen and (max-width:767px) {
     #saiba-mais {
-        padding: 3px 13px;
-        font-size: 28px;
-        font-weight: 700;
         max-height: 40px;
     }
 

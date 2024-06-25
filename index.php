@@ -3,7 +3,7 @@
     use classes\FandomSuggestion;
     $activeSuggestions = FandomSuggestion::getActiveSuggestions();
 ?>
-
+<?php include './includes/banner-info.php'; ?>
 <?php include './includes/alert-error.php'; ?>
 <?php include './includes/alert-warning.php'; ?>
 <div class="form-container">

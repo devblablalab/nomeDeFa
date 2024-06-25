@@ -8,11 +8,11 @@
     <link rel="stylesheet" href="<?= get_url() . 'public/css/style.css' ?>">
 </head>
 <body>
-    <header id="main-header">
+    <header id="main-header" class="banner">
         <div class="container">
             <div class="brand">
                 <?php include 'svg/brand.php'; ?>
             </div>
-            <div class="saibaMais">?</div>
+            <div id="saiba-mais">?</div>
         </div>
     </header>

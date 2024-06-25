@@ -8,7 +8,7 @@ import {
   toggleFormContent 
 } from './utils.js';
 
-export function handleChangeFormInput(e) {
+export function handleKeyupFormInput(e) {
     const { currentTarget } = e;
     enableTargetControl(currentTarget);
 } 
@@ -67,4 +67,19 @@ export function handleClickCloseAlert(e) {
   const alertParent = document.querySelector(`[data-alert-target="${selector}"]`);
 
   if(alertParent) alertParent.classList.remove('active');
+}
+
+function handleClickToggleInfo(action) {
+  if(!['add','remove'].includes(action)) return;
+  
+  const bannerInfo = document.querySelector('#banner-info');
+  bannerInfo.classList[action]('active');
+}
+
+export function handleClickOpenInfo() {
+  handleClickToggleInfo('add');
+}
+
+export function handleClickCloseInfo() {
+  handleClickToggleInfo('remove');
 }

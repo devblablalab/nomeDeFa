@@ -38,6 +38,23 @@ body {
     display: none!important;
 }
 
+.close {
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+
+.brand {
+    width: 180px;
+    height: 60px;
+}
+
+header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
 /** Alert **/
 .alert-container {
     display: none;
@@ -95,9 +112,6 @@ body {
 
 .alert .close {
     color: var(--light);
-    cursor: pointer;
-    background: none;
-    border: none;
     transition: transform 0.5s;
 }
 
@@ -106,7 +120,86 @@ body {
 }
 /** Alert **/
 
-.saibaMais {
+/** Info **/
+#banner-info {
+    position: absolute;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    background: var(--primary);
+    min-height: 60vh;
+    width: 100%;
+    transform: translateY(-100vh);
+    transition: all .2s ease-in-out;
+}
+
+#banner-info.active {
+    transform: translateY(0);
+}
+
+#banner-info .wrapper {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    min-height: 60vh;
+}
+
+#banner-info header,
+#banner-info .content {
+    width: 100%;
+    padding: 1em 2em;
+}
+
+#banner-info header .container .close {
+    transition: all .2s;
+}
+
+#banner-info header .container .close svg {
+    width: 80px;
+    height: 80px;
+}
+
+#banner-info header .container .close:hover path {
+    fill: var(--dark);
+}
+
+#banner-info header .container .close path:nth-child(2) {
+    fill: var(--dark);
+}
+
+#banner-info .content .text {
+    font-size: 32px;
+    font-weight: 600;
+    color: var(--dark);
+    padding: 10px 0;
+}
+
+#banner-info footer {
+    position: absolute;
+    bottom: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 10px;
+    padding: 10px 0;
+}
+
+#banner-info footer svg {
+    width: 40px;
+    height: 40px;
+}
+
+#banner-info footer svg,
+#banner-info footer svg path {
+    fill: var(--dark);
+}
+
+/** Info **/
+
+#saiba-mais {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -121,7 +214,7 @@ body {
     transition: all .2s;
 }
 
-.saibaMais:hover {
+#saiba-mais:hover {
     background: var(--light);
     color: var(--gray);
 }
@@ -129,16 +222,6 @@ body {
 header#main-header {
     width: 100%;
     padding: 1em 2em;
-}
-
-header#main-header .container {
-    display: flex;
-    justify-content: space-between;
-}
-
-header#main-header .container #brand {
-    width: 180px;
-    height: 60px;
 }
 
 .form-container {
@@ -346,10 +429,14 @@ header#main-header .container #brand {
         width: 70px;
         height: 70px;
     }
+
+    #main-footer {
+        position: inherit;
+    }
 }
 
 @media screen and (max-width:480px) {
-    header#main-header .container #brand {
+    .brand {
         width: 140px;
     }
 }

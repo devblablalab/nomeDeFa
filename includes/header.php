@@ -7,6 +7,7 @@
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
     <meta name="description" content="Um projeto de catalogação colaborativa dos nomes de fãs desenvolvido por BlaBlaLab">
     <title>NomeDeFã</title>
+    <link rel="icon" type="image/x-icon" href="<?= get_url() . 'public/assets/favicon.ico' ?>">
     <link rel="stylesheet" href="<?= get_url() . 'public/css/style.css' ?>">
     <link rel="stylesheet" href="<?= get_url() . 'public/css/table.css' ?>">
     <link href="<?= get_url() . 'public/css/tabulator.min.css' ?>" rel="stylesheet">

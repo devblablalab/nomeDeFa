@@ -449,6 +449,10 @@ header#main-header {
         height: 70px;
     }
 
+    .form-container .container form {
+        font-size: 2.2em;
+    }
+
     #main-footer {
         position: inherit;
     }

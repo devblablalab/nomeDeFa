@@ -1,3 +1,4 @@
 vendor
 .env
 requestBlocker/*
+node_modules

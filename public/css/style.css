@@ -389,6 +389,13 @@ header#main-header {
 }
 
 @media screen and (max-width:767px) {
+    #saiba-mais {
+        padding: 3px 13px;
+        font-size: 28px;
+        font-weight: 700;
+        max-height: 40px;
+    }
+
     #banner-info,
     #banner-info .wrapper {
         min-height: 80vh;
@@ -429,10 +436,6 @@ header#main-header {
 
     .form-container .container form {
         font-size: 2.2em;
-    }
-
-    #main-footer {
-        position: inherit;
     }
 }
 

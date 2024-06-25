@@ -5,8 +5,35 @@
     margin: 40px 0;
 }
 
-/* #suggestions-table.tabulator .tabulator-header {
-    border-bottom: none;
+#suggestions-table.tabulator .pill-official {
+    font-size: 12.5px;
+    font-weight: 600;
+    background-color: var(--primary);
+    padding: 4px 8px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin-left: 10px;
+    border-radius: 16px;
+    color: var(--dark);
+}
+
+#suggestions-table.tabulator .tabulator-header {
+    border-top: none;
+}
+
+#suggestions-table.tabulator .tabulator-sortable:nth-child(1) .tabulator-col-title {
+    position: relative;
+}
+
+/* #suggestions-table.tabulator .tabulator-sortable:nth-child(1) .tabulator-col-title:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom:0;
+    width:100%;
+    height:1px;
+    background: var(--gray);
 } */
 
 #suggestions-table.tabulator .tabulator-header .tabulator-col,
@@ -62,5 +89,17 @@
     #suggestions-table.tabulator .tabulator-footer .tabulator-paginator {
         padding: 10px 0;
         flex-wrap: wrap;
+    }
+}
+
+@media screen and (max-width:480px) {
+    #suggestions-table.tabulator {
+        font-size: .9em;
+    }
+
+    #suggestions-table.tabulator .pill-official {
+        font-size: 10px;
+        padding: 2px 4px;
+        margin-left: 8px;
     }
 }

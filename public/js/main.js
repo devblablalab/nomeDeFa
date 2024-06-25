@@ -27,10 +27,14 @@ document.addEventListener('DOMContentLoaded', () => {
         layout:"fitColumns",
         pagination:"local",
         paginationSize:5,
+        sortOrderReverse: true,
         columns:[
             {title:"Quem", field:"who", sorter:"string"},
-            {title:"Fãs", field:"fan", sorter:"string"},
-            {title:"Categoria", field:"category", sorter:"string"},
+            {title:"Fãs", field:"fan", headerSort:false,formatter:"html"},
+            {title:"Categoria", field:"category", headerSort:false},
+        ],
+        initialSort: [
+            { column: 'who', dir: 'asc' },
         ],
         locale: true,
         langs: getLangOptionsTabulator()

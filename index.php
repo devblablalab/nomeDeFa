@@ -44,9 +44,13 @@
             </thead>
             <tbody>
                 <?php foreach($activeSuggestions as $suggestion): ?>
+                    <?php $originalHtml = !empty(@$suggestion['official']) 
+                            ? '<span class="pill-official">OFICIAL</span>'  
+                            : ''
+                    ?>
                     <tr>
                         <td><?= @$suggestion['artist_name'] ?></td>
-                        <td><?= @$suggestion['suggestion'] ?></td>
+                        <td><?= @$suggestion['suggestion'] . $originalHtml ?></td>
                         <td><?= @$suggestion['category'] ?></td>
                     </tr>
                 <?php endforeach; ?>

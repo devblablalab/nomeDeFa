@@ -49,7 +49,7 @@ class FandomSuggestion {
         if( empty($connectionManager) ) return [];	
 
         $sql = "SELECT 
-        fs.suggestion, fs.artist_name,c.category
+        fs.suggestion, fs.artist_name,fs.official,c.category
         FROM fandom_suggestion fs 
         INNER JOIN categories c ON fs.fk_id_category = c.id_category
         WHERE fs.active = 1";

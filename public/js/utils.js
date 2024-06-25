@@ -1,5 +1,26 @@
 let lastRequestTime = 0;
 
+export function getLangOptionsTabulator() {
+  return {
+    "pt-br": {
+        "pagination": {
+            "first": "Primeiro",
+            "first_title": "Primeira Página",
+            "last": "Último",
+            "last_title": "Última Página",
+            "prev": "Anterior",
+            "prev_title": "Página Anterior",
+            "next": "Próximo",
+            "next_title": "Próxima Página",
+            "page_size": "Tamanho da página"
+        },
+        "headerFilters": {
+            "default": "Filtrar coluna..."
+        }
+    },
+  }
+}
+
 export function rateLimitCheck(message) {
   const now = Date.now();
   const timeSinceLastRequest = now - lastRequestTime;

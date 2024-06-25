@@ -1,0 +1,66 @@
+#suggestions-table.tabulator {
+    width: 100%;
+    font-size: 1.2em;
+    border: none;
+    margin: 40px 0;
+}
+
+/* #suggestions-table.tabulator .tabulator-header {
+    border-bottom: none;
+} */
+
+#suggestions-table.tabulator .tabulator-header .tabulator-col,
+#suggestions-table.tabulator .tabulator-row .tabulator-cell {
+    border-right: none;
+    padding: 0 15px;
+}
+
+#suggestions-table.tabulator .tabulator-header .tabulator-col,
+#suggestions-table.tabulator .tabulator-row,
+#suggestions-table.tabulator .tabulator-footer {
+    background-color: var(--dark);
+    color: var(--light);
+}
+
+#suggestions-table.tabulator .tabulator-row {
+    padding: 20px 0;
+    border-bottom: 2px dashed var(--gray);
+}
+
+#suggestions-table.tabulator .tabulator-footer {
+    border-top: none;
+}
+
+#suggestions-table.tabulator .tabulator-footer .tabulator-paginator {
+    padding: 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#suggestions-table.tabulator .tabulator-footer .tabulator-page {
+    padding: 10px 15px;
+    background-color: var(--dark);
+    color: var(--light);
+}
+
+#suggestions-table.tabulator .tabulator-footer .tabulator-page:hover {
+    background-color: var(--light);
+    color: var(--dark);
+}
+
+@media screen and (max-width:767px) {
+    #suggestions-table.tabulator .tabulator-pages {
+        display: block!important;
+    }
+
+    #suggestions-table.tabulator .tabulator-page[data-page="first"],
+    #suggestions-table.tabulator .tabulator-page[data-page="last"] {
+        display: none;
+    }
+
+    #suggestions-table.tabulator .tabulator-footer .tabulator-paginator {
+        padding: 10px 0;
+        flex-wrap: wrap;
+    }
+}

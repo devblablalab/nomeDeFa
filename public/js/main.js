@@ -6,6 +6,8 @@ import {
     handleClickCloseInfo 
 } from "./handles.js";
 
+import { getLangOptionsTabulator } from "./utils.js";
+
 document.addEventListener('DOMContentLoaded', () => {
     const formInputs = document.querySelectorAll('.formInput');
     const closeAlerts = document.querySelectorAll('[data-close-alert]');
@@ -18,4 +20,17 @@ document.addEventListener('DOMContentLoaded', () => {
     sendControl.addEventListener('click', handleClickSendData);
     saibaMaisBtn.addEventListener('click', handleClickOpenInfo);
     bannerInfoCloseBtn.addEventListener('click', handleClickCloseInfo);
+
+    let table = new Tabulator("#suggestions-table", {
+        layout:"fitColumns",
+        pagination:"local",
+        paginationSize:5,
+        columns:[
+            {title:"Quem", field:"who", sorter:"string"},
+            {title:"Fãs", field:"fan", sorter:"string"},
+            {title:"Categoria", field:"category", sorter:"string"},
+        ],
+        locale: true,
+        langs: getLangOptionsTabulator()
+    });
 });

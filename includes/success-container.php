@@ -1,4 +1,4 @@
-<div class="success-container display-none">
+<div class="success-container display-none" aria-hidden="true">
     <?php include 'svg/success-comment.php'; ?>
     <div class="success-footer">
         <button class="back-to-form" type="button">

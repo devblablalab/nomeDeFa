@@ -1,9 +1,11 @@
 <?php require './bootstrap.php'; ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="description" content="Um projeto de catalogação colaborativa dos nomes de fãs desenvolvido por BlaBlaLab">
     <title>NomeDeFã</title>
     <link rel="stylesheet" href="<?= get_url() . 'public/css/style.css' ?>">
     <link rel="stylesheet" href="<?= get_url() . 'public/css/table.css' ?>">

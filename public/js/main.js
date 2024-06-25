@@ -6,7 +6,7 @@ import {
     handleClickCloseInfo 
 } from "./handles.js";
 
-import { getLangOptionsTabulator } from "./utils.js";
+import { toggleFormContent, getLangOptionsTabulator } from "./utils.js";
 
 document.addEventListener('DOMContentLoaded', () => {
     const formInputs = document.querySelectorAll('.formInput');
@@ -14,12 +14,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const sendControl = document.getElementById('send-control');
     const saibaMaisBtn = document.getElementById('saiba-mais');
     const bannerInfoCloseBtn = document.querySelector('#banner-info .close');
+    const backToFormBtn = document.querySelector('.back-to-form');
 
     formInputs.forEach(input => input.addEventListener('keyup', handleKeyupFormInput));
     closeAlerts.forEach(close => close.addEventListener('click', handleClickCloseAlert));
     sendControl.addEventListener('click', handleClickSendData);
     saibaMaisBtn.addEventListener('click', handleClickOpenInfo);
     bannerInfoCloseBtn.addEventListener('click', handleClickCloseInfo);
+    backToFormBtn.addEventListener('click', () => toggleFormContent(false));
 
     let table = new Tabulator("#suggestions-table", {
         layout:"fitColumns",

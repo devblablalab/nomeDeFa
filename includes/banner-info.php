@@ -3,7 +3,7 @@
         <header>
             <div class="container">
                 <?php include 'svg/brand-info.php'; ?>
-                <button class="close" type="button">
+                <button role="button" class="close" type="button" aria-label="Fechar">
                     <?php include 'svg/close.php'; ?>
                 </button>
             </div>

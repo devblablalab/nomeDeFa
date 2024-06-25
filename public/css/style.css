@@ -411,6 +411,25 @@ header#main-header {
 }
 
 @media screen and (max-width:767px) {
+    #banner-info,
+    #banner-info .wrapper {
+        min-height: 80vh;
+    }
+
+    #banner-info .content .text {
+        font-size: 24px;
+        padding: 5px 0;
+    }
+
+    #banner-info footer {
+        padding: 5px 0;
+    }
+
+    #banner-info footer svg {
+        width: 25px;
+        height: 25px;
+    }
+
     .container,
     .alert {
         max-width: 100%;

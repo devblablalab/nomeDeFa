@@ -4,6 +4,6 @@
         <?php include 'svg/blablalab-logo.php'; ?>
     </a>
 </footer>
-<script type="module" src="<?= get_url() . 'public/js/main.js?ver=1.0.1' ?>"></script>
+<script type="module" src="<?= get_url() . 'public/js/main.js?ver=1.0.3' ?>"></script>
 </body>
 </html>

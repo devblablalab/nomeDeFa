@@ -6,7 +6,7 @@ import {
   toggleFormContent,
   triggerAlert,
   updateLastRequestTime
-} from './utils.js?ver=1.0.1';
+} from './utils.js?ver=1.0.3';
 
 export function handleKeyupFormInput(e) {
   const { currentTarget } = e;

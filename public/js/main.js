@@ -5,9 +5,9 @@ import {
     handleClickOpenInfo,
     handleClickSendData,
     handleKeyupFormInput
-} from "./handles.js?ver=1.0.1";
+} from "./handles.js?ver=1.0.2";
 
-import { toggleFormContent } from "./utils.js?ver=1.0.1";
+import { toggleFormContent } from "./utils.js?ver=1.0.2";
 
 document.addEventListener('DOMContentLoaded', () => {
     const formInputs = document.querySelectorAll('.formInput');
@@ -27,14 +27,14 @@ document.addEventListener('DOMContentLoaded', () => {
     backToFormBtn.addEventListener('click', () => toggleFormContent(false));
 
     let table = new Tabulator("#suggestions-table", {
-        layout: window.matchMedia("(max-width: 767px)").matches ? "fitDataFill" : "fitColumns",
+        layout: "fitColumns",
         sortOrderReverse: true,
         resizableRows: false,
         resizableColumns: false,
         columns:[
-            {title:"Quem", field:"who", sorter:"string"},
-            {title:"Fãs", field:"fan", headerSort:false, formatter:"html"},
-            {title:"Categoria", field:"category", headerSort:false},
+            {title:"Quem", field:"who", minWidth:200, sorter:"string"},
+            {title:"Fãs", field:"fan", headerSort:false, minWidth:200, formatter:"html", widthShrink:3},
+            {title:"Categoria", field:"category", minWidth:200, headerSort:false},
         ],
         initialSort: [
             { column: 'who', dir: 'asc' },

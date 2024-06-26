@@ -31,7 +31,7 @@
 #suggestions-table.tabulator .tabulator-header .tabulator-col,
 #suggestions-table.tabulator .tabulator-row .tabulator-cell {
     border-right: none;
-    padding: 0 15px;
+    padding: 0 30px;
 }
 
 #suggestions-table.tabulator .tabulator-header .tabulator-col,
@@ -81,6 +81,12 @@
     #suggestions-table.tabulator .tabulator-footer .tabulator-paginator {
         padding: 10px 0;
         flex-wrap: wrap;
+    }
+
+    #suggestions-table.tabulator .tabulator-header .tabulator-col,
+    #suggestions-table.tabulator .tabulator-row .tabulator-cell {
+        border-right: none;
+        padding: 0 10px;
     }
 }
 

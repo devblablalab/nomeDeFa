@@ -1,12 +1,12 @@
-import { 
-  enableTargetControl,
-  rateLimitCheck,
-  updateLastRequestTime,
-  triggerAlert,
+import {
   dismissAlert,
+  enableTargetControl,
   formHasEmptyField,
-  toggleFormContent 
-} from './utils.js?ver=1.0.0';
+  rateLimitCheck,
+  toggleFormContent,
+  triggerAlert,
+  updateLastRequestTime
+} from './utils.js?ver=1.0.1';
 
 export function handleKeyupFormInput(e) {
   const { currentTarget } = e;

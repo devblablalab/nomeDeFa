@@ -1,13 +1,13 @@
-import { 
-    handleKeyupFormInput, 
-    handleClickSendData, 
-    handleClickCloseAlert, 
+import {
     handleChangeCategory,
+    handleClickCloseAlert,
+    handleClickCloseInfo,
     handleClickOpenInfo,
-    handleClickCloseInfo 
-} from "./handles.js?ver=1.0.0";
+    handleClickSendData,
+    handleKeyupFormInput
+} from "./handles.js?ver=1.0.1";
 
-import { toggleFormContent } from "./utils.js?ver=1.0.0";
+import { toggleFormContent } from "./utils.js?ver=1.0.1";
 
 document.addEventListener('DOMContentLoaded', () => {
     const formInputs = document.querySelectorAll('.formInput');

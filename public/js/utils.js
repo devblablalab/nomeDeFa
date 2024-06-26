@@ -1,26 +1,5 @@
 let lastRequestTime = 0;
 
-export function getLangOptionsTabulator() {
-  return {
-    "pt-br": {
-        "pagination": {
-            "first": "Primeiro",
-            "first_title": "Primeira Página",
-            "last": "Último",
-            "last_title": "Última Página",
-            "prev": "Anterior",
-            "prev_title": "Página Anterior",
-            "next": "Próximo",
-            "next_title": "Próxima Página",
-            "page_size": "Tamanho da página"
-        },
-        "headerFilters": {
-            "default": "Filtrar coluna..."
-        }
-    },
-  }
-}
-
 export function rateLimitCheck(message) {
   const now = Date.now();
   const timeSinceLastRequest = now - lastRequestTime;
@@ -44,12 +23,14 @@ export function enableTargetControl(control) {
 
     const controlOptions = {
       class: control.value.trim().length > 0 ? 'add' : 'remove',
-      disabled: control.value.trim().length > 0 ? false : true
+      disabled: !control.value.trim().length > 0,
+      value: control.value ? 1 : ''
     }
 
     targetControl.classList[controlOptions['class']]('active-control');
-    targetControl.disabled = controlOptions['disabled'];
-}
+    targetControl.disabled = controlOptions.disabled;
+    targetControl.value = controlOptions.value;
+} 
 
 function alertActionCommon(message = '', type = '', action = 'add') {
   const selector = type?.trim()?.length == 0 ? '[data-alert-target]' : `[data-alert-target="${type}"]`;
@@ -74,7 +55,11 @@ export function dismissAlert(type = '') {
 
 export function formHasEmptyField() {
   const formInputs = document.querySelectorAll('.form-container .formInput') || [];
-  return Array.from(formInputs).some(input => input.value.trim().length == 0);
+  const controls = document.querySelectorAll('.form-container .control:not(#send-control)') || [];
+
+  const fields = [...formInputs].concat([...controls]);
+
+  return fields.some(field => field.value.trim().length == 0 );
 }
 
 export function toggleFormContent(hideForm = true) {

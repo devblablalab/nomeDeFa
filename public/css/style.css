@@ -300,7 +300,14 @@ header#main-header {
 .form-container .container .actions .control.active-control,
 .form-container .container .actions .control.active-control option {
     background: var(--primary);
-    color: var(--dark);
+}
+
+.form-container .container .actions .control.empty-value {
+    background: var(--gray);
+}
+
+.form-container .container .actions .control.empty-value option {
+    background: var(--primary);
 }
 
 .form-container .container .actions select.control {

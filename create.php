@@ -12,9 +12,16 @@
   }
   
   $requestData = Http::getRequestData();
-  $suggestion = @$requestData['suggestion'] ?? '';
-  $artist = @$requestData['artist'] ?? '';
+  $suggestion = trim(@$requestData['suggestion']) ?? '';
+  $artist = trim(@$requestData['artist']) ?? '';
   $category = @$requestData['category'] ?? '';
+
+  if(strlen($artist ) > 40 || strlen($suggestion )) {
+    return Http::sendResponseJson([
+      'message' => 'As sugestões tem o tamanho máximo de 40 caracteres. Por favor corrija os dados e tente novamente.',
+      'data' => []
+    ], 422);
+  }
 
   $fandomSuggestion = new FandomSuggestion($suggestion,$artist,(int)$category);
   $fandomWasInserted = $fandomSuggestion->save();

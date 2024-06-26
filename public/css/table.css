@@ -21,21 +21,12 @@
 
 #suggestions-table.tabulator .tabulator-header {
     border-top: none;
+    background-color: transparent;
 }
 
 #suggestions-table.tabulator .tabulator-sortable:nth-child(1) .tabulator-col-title {
-    position: relative;
+    white-space: normal;
 }
-
-/* #suggestions-table.tabulator .tabulator-sortable:nth-child(1) .tabulator-col-title:after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom:0;
-    width:100%;
-    height:1px;
-    background: var(--gray);
-} */
 
 #suggestions-table.tabulator .tabulator-header .tabulator-col,
 #suggestions-table.tabulator .tabulator-row .tabulator-cell {

@@ -12,15 +12,16 @@
             <form action="create.php" method='POST'>
                 <label for="">
                     <p class="formLabel">Quem é fã de</p>
-                    <input data-control-target="#categories" placeholder="digite aqui" name="artist" class="formInput" type="text" autocomplete="off" maxlength="50">
+                    <input data-control-target="#categories" placeholder="digite aqui" name="artist" class="formInput" type="text" autocomplete="off" maxlength="40">
                 </label>
                 <label for="">
                     <p class="formLabel">se chama</p>
-                    <input data-control-target="#send-control" placeholder="digite aqui" name="suggestion" class="formInput" type="text" autocomplete="off" maxlength="50">
+                    <input data-control-target="#send-control" placeholder="digite aqui" name="suggestion" class="formInput" type="text" autocomplete="off" maxlength="40">
                 </label>
 
                 <div class="actions">
                     <select id="categories" class="control" name="category" disabled>
+                        <option value="">Categoria</option>
                         <option value="1">Internet</option>
                         <option value="2">Artes</option>
                         <option value="3">Esportes</option>
@@ -51,7 +52,7 @@
                     <tr>
                         <td><?= @$suggestion['artist_name'] ?></td>
                         <td><?= @$suggestion['suggestion'] . $originalHtml ?></td>
-                        <td><?= @$suggestion['category'] ?></td>
+                        <td><?= !empty(@$suggestion['category']) ? @$suggestion['category'] : 'Sem categoria'  ?></td>
                     </tr>
                 <?php endforeach; ?>
             </tbody>

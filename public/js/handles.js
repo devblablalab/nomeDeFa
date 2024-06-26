@@ -9,8 +9,8 @@ import {
 } from './utils.js';
 
 export function handleKeyupFormInput(e) {
-    const { currentTarget } = e;
-    enableTargetControl(currentTarget);
+  const { currentTarget } = e;
+  enableTargetControl(currentTarget);
 } 
    
 export async function handleClickSendData(e) {
@@ -58,6 +58,12 @@ export async function handleClickSendData(e) {
     currentTarget.disabled = false;
     currentTarget.textContent = 'Adicionar';
   }
+}
+
+export function handleChangeCategory(e) {
+  const { currentTarget } = e;
+  const clsAction = currentTarget.value.trim() > 0 ? 'remove' : 'add';
+  currentTarget.classList[clsAction]('empty-value');
 }
 
 export function handleClickCloseAlert(e) {

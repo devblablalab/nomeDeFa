@@ -6,7 +6,7 @@ import {
   toggleFormContent,
   triggerAlert,
   updateLastRequestTime
-} from './utils.js?ver=1.0.6';
+} from './utils.js?ver=1.0.7';
 
 export function handleKeyupFormInput(e) {
   const { currentTarget } = e;
@@ -21,7 +21,7 @@ export async function handleClickSendData(e) {
   dismissAlert(); 
 
   if(formHasEmptyField()) {
-    return triggerAlert('Preencha todos os campos para adicionar a sugestão','warning');
+    return triggerAlert('Preencha todos os campos para adicionar a sugestão','validation');
   }
 
   try {
@@ -63,7 +63,10 @@ export async function handleClickSendData(e) {
 export function handleChangeCategory(e) {
   const { currentTarget } = e;
   const clsAction = currentTarget.value.trim() > 0 ? 'remove' : 'add';
-  currentTarget.classList[clsAction]('empty-value');
+
+  ['empty-value','empty-control'].forEach(cls => {
+    currentTarget.classList[clsAction](cls);
+  })
 }
 
 export function handleClickCloseAlert(e) {

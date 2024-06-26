@@ -5,7 +5,6 @@
     src: url('../font/area-normal-regular.otf');
     src: url('../font/area-normal-semibold.otf')
 }
-  
 
 :root {
     --dark: #0C0C0C;
@@ -13,7 +12,6 @@
     --light :#ffff;
     --gray: #5B5B5B;
     --error: #e41749;
-    --warning: #f2a600;
     --success-content-width-lg: 520px;
     --success-content-width-sm: 320px;
     --success-content-width-extra-sm: 240px;
@@ -91,8 +89,8 @@ header .container {
     background: var(--error);
 }
 
-.alert-warning {
-    background: var(--warning);
+.alert-validation {
+    background: var(--gray);
 }
 
 .alert .text,
@@ -236,9 +234,14 @@ header .container {
 }
 
 header#main-header {
+    position: fixed;
+    z-index:100;
+    top: 0;
+    left: 0;
     width: 100%;
     padding: 1em 2em;
     height:90px;
+    background: var(--dark);
 }
 
 .form-container {
@@ -301,7 +304,7 @@ header#main-header {
     cursor: pointer;
 }
 
-.form-container .container .actions .control.active-control,
+.form-container .container .actions .control.active-control:not(.empty-control),
 .form-container .container .actions .control.active-control option {
     background-color: var(--primary)!important;
 }
@@ -316,6 +319,10 @@ header#main-header {
     color: var(--dark);
 }
 
+.form-container .container .actions select.control option[value=""] {
+    display: none;
+}     
+
 .form-container .container .actions button.control {
     border-radius: 22px;
     transition: opacity .2s;
@@ -323,6 +330,11 @@ header#main-header {
 
 .form-container .container .actions button.control:hover {
     opacity: .6;
+}
+
+.form-container,
+.success-container {
+    margin-top: 90px!important;
 }
 
 .success-container {
@@ -387,6 +399,7 @@ header#main-header {
 
 #main-footer {
     position: fixed;
+    z-index:100;
     left:0;
     bottom:0;
     width: 100%;
@@ -447,6 +460,7 @@ header#main-header {
         font-size: 2.2em;
     }
 
+    .form-container .container .actions select.control,
     .form-container .container .actions .control {
         font-size: 16px;
     }
@@ -491,6 +505,10 @@ header#main-header {
     .success-container .success-footer button.back-to-form {
         font-size: 14px;
         padding: 6px 10px;
+    }
+
+    .form-container .container, .form-container .container form {
+        padding: 0 10px;
     }
 }
 

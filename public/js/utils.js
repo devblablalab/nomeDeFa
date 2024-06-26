@@ -23,10 +23,12 @@ export function enableTargetControl(control) {
 
     const controlOptions = {
       class: control.value.trim().length > 0 ? 'add' : 'remove',
+      emptyClass: targetControl.value.trim().length == 0 ? 'add' : 'remove',
       disabled: !control.value.trim().length > 0,
     }
 
     targetControl.classList[controlOptions['class']]('active-control');
+    if(targetControl.tagName == "SELECT") targetControl.classList[controlOptions['emptyClass']]('empty-control');
     targetControl.disabled = controlOptions.disabled;
 } 
 
@@ -66,8 +68,9 @@ export function toggleFormContent(hideForm = true) {
 
   if(!successContainer) return;
 
-  document.querySelectorAll('select,input,button')?.forEach(control => {
+  document.querySelectorAll('select.control,input,button.control')?.forEach(control => {
     control.value = '';
+    control.disabled = true;
     control.classList.remove('active-control');
   });
 

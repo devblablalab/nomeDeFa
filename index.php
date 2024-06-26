@@ -4,10 +4,10 @@
     $activeSuggestions = FandomSuggestion::getActiveSuggestions();
 ?>
 <?php include './includes/banner-info.php'; ?>
-<?php include './includes/alert-error.php'; ?>
-<?php include './includes/alert-warning.php'; ?>
 <main>
     <div class="form-container">
+        <?php include './includes/alert-error.php'; ?>
+        <?php include './includes/alert-validation.php'; ?>
         <div class="container">
             <form action="create.php" method='POST'>
                 <label for="">
@@ -21,7 +21,7 @@
 
                 <div class="actions">
                     <select id="categories" class="control" name="category" disabled>
-                        <option value="">Categoria</option>
+                        <option class="empty" value="">Categoria</option>
                         <option value="1">Internet</option>
                         <option value="2">Artes</option>
                         <option value="3">Esportes</option>

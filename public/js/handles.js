@@ -6,7 +6,7 @@ import {
   dismissAlert,
   formHasEmptyField,
   toggleFormContent 
-} from './utils.js';
+} from './utils.js?ver=1.0.0';
 
 export function handleKeyupFormInput(e) {
   const { currentTarget } = e;

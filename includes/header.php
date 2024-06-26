@@ -16,8 +16,8 @@
         }
     </style>
     <link rel="icon" type="image/x-icon" href="<?= get_url() . 'public/assets/favicon.ico' ?>">
-    <link rel="stylesheet" href="<?= get_url() . 'public/css/style.css?ver=1.0.2' ?>">
-    <link rel="stylesheet" href="<?= get_url() . 'public/css/table.css?ver=1.0.2' ?>">
+    <link rel="stylesheet" href="<?= get_url() . 'public/css/style.css?ver=1.0.1' ?>">
+    <link rel="stylesheet" href="<?= get_url() . 'public/css/table.css?ver=1.0.1' ?>">
     <link href="<?= get_url() . 'public/css/tabulator.min.css' ?>" rel="stylesheet">
     <script type="text/javascript" src="<?= get_url() . 'public/js/tabulator.min.js' ?>"></script>
 </head>

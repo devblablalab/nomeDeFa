@@ -221,6 +221,7 @@ header .container {
     background-color: var(--gray);
     color: var(--light);
     padding: 0 12px;
+    margin-bottom: 5px;
     font-size: 28px;
     font-weight: 700;
     max-height: 45px;

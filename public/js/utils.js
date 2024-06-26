@@ -24,12 +24,10 @@ export function enableTargetControl(control) {
     const controlOptions = {
       class: control.value.trim().length > 0 ? 'add' : 'remove',
       disabled: !control.value.trim().length > 0,
-      value: control.value ? 1 : ''
     }
 
     targetControl.classList[controlOptions['class']]('active-control');
     targetControl.disabled = controlOptions.disabled;
-    targetControl.value = controlOptions.value;
 } 
 
 function alertActionCommon(message = '', type = '', action = 'add') {

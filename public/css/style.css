@@ -306,14 +306,6 @@ header#main-header {
     background-color: var(--primary)!important;
 }
 
-.form-container .container .actions .control.empty-value {
-    background-color: var(--gray)!important;
-}
-
-.form-container .container .actions .control.empty-value option {
-    background-color: var(--primary)!important;
-}
-
 .form-container .container .actions select.control {
     border-radius: 8px;
 }

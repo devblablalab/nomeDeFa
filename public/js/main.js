@@ -5,9 +5,9 @@ import {
     handleClickOpenInfo,
     handleClickSendData,
     handleKeyupFormInput
-} from "./handles.js?ver=1.0.3";
+} from "./handles.js?ver=1.0.4";
 
-import { toggleFormContent } from "./utils.js?ver=1.0.3";
+import { toggleFormContent } from "./utils.js?ver=1.0.4";
 
 document.addEventListener('DOMContentLoaded', () => {
     const formInputs = document.querySelectorAll('.formInput');

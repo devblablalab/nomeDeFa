@@ -307,13 +307,13 @@ header#main-header {
 }
 
 .form-container .container .actions select.control {
-    border-radius: 8px;
+    font-size: 20px;
 }
 
 .form-container .container .actions select.control option {
+    font-size: 18px;
     background: var(--gray);
     color: var(--dark);
-    font-weight: 600;
 }
 
 .form-container .container .actions button.control {
@@ -386,9 +386,14 @@ header#main-header {
 }
 
 #main-footer {
+    position: fixed;
+    left:0;
+    bottom:0;
     width: 100%;
     text-align: center;
     padding: 20px;
+    background: var(--dark);
+    box-shadow: rgba(255, 255, 255, 0.2) 0px 0px 0px 1px inset, rgba(0, 0, 0, 0.9) 0px 0px 0px 1px;
 }
 
 @media screen and (max-width:767px) {

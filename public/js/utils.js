@@ -68,11 +68,12 @@ export function toggleFormContent(hideForm = true) {
 
   if(!successContainer) return;
 
-  document.querySelectorAll('select.control,input,button.control')?.forEach(control => {
+  document.querySelectorAll('select,input,button')?.forEach(control => {
     control.value = '';
-    control.disabled = true;
     control.classList.remove('active-control');
   });
+
+  document.querySelectorAll('.control')?.forEach(control => control.disabled = true);
 
   formContainer.classList[hideForm ? 'add' : 'remove']('display-none');
   successContainer.classList[hideForm ? 'remove' : 'add']('display-none');

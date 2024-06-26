@@ -16,7 +16,7 @@
   $artist = trim(@$requestData['artist']) ?? '';
   $category = @$requestData['category'] ?? '';
 
-  if(strlen($artist ) > 40 || strlen($suggestion )) {
+  if(strlen($artist) > 40 || strlen($suggestion) > 40) {
     return Http::sendResponseJson([
       'message' => 'As sugestões tem o tamanho máximo de 40 caracteres. Por favor corrija os dados e tente novamente.',
       'data' => []

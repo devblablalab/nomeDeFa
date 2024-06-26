@@ -32,8 +32,11 @@ input:-webkit-autofill {
 
 body {
     position: relative;
-    min-height: 100vh;
     background-color: var(--dark);  
+}
+
+main {
+    min-height: calc(100vh - 90px);
 }
 
 .container {
@@ -190,13 +193,13 @@ header .container {
     align-items: center;
     justify-content: center;
     width: 100%;
-    gap: 10px;
+    gap: 20px;
     padding: 10px 0;
 }
 
 #banner-info footer svg {
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
 }
 
 #banner-info footer svg,
@@ -217,10 +220,10 @@ header .container {
     align-items: center;
     background-color: var(--gray);
     color: var(--light);
-    padding: 3px 13px;
+    padding: 0 12px;
     font-size: 28px;
     font-weight: 700;
-    max-height: 50px;
+    max-height: 45px;
     border-radius: 5px;
     cursor: pointer;
     transition: all .2s;
@@ -234,6 +237,7 @@ header .container {
 header#main-header {
     width: 100%;
     padding: 1em 2em;
+    height:90px;
 }
 
 .form-container {
@@ -289,7 +293,6 @@ header#main-header {
 .form-container .container .actions .control {
     flex: 1;
     font-size: 18px;
-    font-weight: 600;
     padding: 10px 15px;
     background: var(--gray);
     color: var(--dark);
@@ -299,15 +302,15 @@ header#main-header {
 
 .form-container .container .actions .control.active-control,
 .form-container .container .actions .control.active-control option {
-    background: var(--primary);
+    background-color: var(--primary)!important;
 }
 
 .form-container .container .actions .control.empty-value {
-    background: var(--gray);
+    background-color: var(--gray)!important;
 }
 
 .form-container .container .actions .control.empty-value option {
-    background: var(--primary);
+    background-color: var(--primary)!important;
 }
 
 .form-container .container .actions select.control {
@@ -321,7 +324,7 @@ header#main-header {
 }
 
 .form-container .container .actions button.control {
-    border-radius: 18px;
+    border-radius: 22px;
     transition: opacity .2s;
 }
 
@@ -392,14 +395,10 @@ header#main-header {
 #main-footer {
     width: 100%;
     text-align: center;
-    padding: 30px 20px;
+    padding: 20px;
 }
 
 @media screen and (max-width:767px) {
-    #saiba-mais {
-        max-height: 40px;
-    }
-
     #banner-info,
     #banner-info .wrapper {
         min-height: 80vh;
@@ -459,6 +458,10 @@ header#main-header {
 @media screen and (max-width:480px) {
     .brand {
         width: 140px;
+    }
+
+    #saiba-mais {
+        font-size: 24px;
     }
 
     .form-container {

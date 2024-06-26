@@ -65,11 +65,13 @@ export function formHasEmptyField() {
 export function toggleFormContent(hideForm = true) {
   const formContainer = document.querySelector('.form-container');
   const successContainer = document.querySelector('.success-container');
-  const formInputs = document.querySelectorAll('.form-container .formInput') || [];
 
   if(!successContainer) return;
 
-  formInputs.forEach(input => input.value = '');
+  document.querySelectorAll('select,input,button')?.forEach(control => {
+    control.value = '';
+    control.classList.remove('active-control');
+  });
 
   formContainer.classList[hideForm ? 'add' : 'remove']('display-none');
   successContainer.classList[hideForm ? 'remove' : 'add']('display-none');

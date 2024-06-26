@@ -10,9 +10,9 @@
         </header>
         <section class="content container">
             <div>
-                <p class="text">Esse é um projeto de catalogação colaborativa dos nomes de fãs (ou dos fandoms/fanbases) </p>
-                <p class="text">É também uma análise de "naming" e linguística</p>
-                <p class="text">Foi desenvolvido por BlaBlaLab, um Laboratório de Comunicologia</p>
+                <p class="text">Esse é um projeto de catalogação colaborativa dos nomes de fãs (ou dos fandoms/fanbases). </p>
+                <p class="text">É também uma análise de "naming" e linguística.</p>
+                <p class="text">Foi desenvolvido por BlaBlaLab, um Laboratório de Comunicologia.</p>
             </div>
         </section>
         <footer>

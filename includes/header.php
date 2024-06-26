@@ -7,11 +7,18 @@
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
     <meta name="description" content="Um projeto de catalogação colaborativa dos nomes de fãs desenvolvido por BlaBlaLab">
     <title>NomeDeFã</title>
+    <style type="text/css">
+        select {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            background: url("<?= get_url() . 'public/assets/arrow-select.png' ?>") no-repeat calc(100% - 15px) #5B5B5B  !important;
+        }
+    </style>
     <link rel="icon" type="image/x-icon" href="<?= get_url() . 'public/assets/favicon.ico' ?>">
     <link rel="stylesheet" href="<?= get_url() . 'public/css/style.css?ver=1.0.0' ?>">
     <link rel="stylesheet" href="<?= get_url() . 'public/css/table.css?ver=1.0.0' ?>">
     <link href="<?= get_url() . 'public/css/tabulator.min.css' ?>" rel="stylesheet">
-    <!-- Tabulator JS -->
     <script type="text/javascript" src="<?= get_url() . 'public/js/tabulator.min.js' ?>"></script>
 </head>
 <body>

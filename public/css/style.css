@@ -130,7 +130,7 @@ header .container {
 
 /** Info **/
 #banner-info {
-    position: absolute;
+    position: fixed;
     z-index: 999;
     top: 0;
     left: 0;
@@ -142,7 +142,7 @@ header .container {
 }
 
 #banner-info.active {
-    transform: translateY(-90px);
+    transform: translateY(0);
 }
 
 #banner-info .wrapper {

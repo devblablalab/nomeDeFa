@@ -3,6 +3,6 @@
         <?php include 'svg/blablalab-logo.php'; ?>
     </a>
 </footer>
-<script type="module" src="<?= get_public() . 'js/main.js?ver=1.0.10' ?>"></script>
+<script type="module" src="<?= get_public() . 'js/main.js?ver=1.0.11' ?>"></script>
 </body>
 </html>

@@ -21,12 +21,20 @@ function dd() {
 }
 
 function get_url(){
-    return sprintf(
-        "%s://%s%s",
+    $url = sprintf(
+        "%s://%s",
         isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off' ? 'https' : 'http',
-        $_SERVER['SERVER_NAME'],
-        $_SERVER['REQUEST_URI']
-    );
+        $_SERVER['SERVER_NAME']
+      );
+    
+      // Remover tudo após a primeira barra '/'
+      $request_uri = $_SERVER['REQUEST_URI'];
+      $pos = strpos($request_uri, '/', 1); // Ignora a primeira barra '/'
+      if ($pos !== false) {
+        $request_uri = substr($request_uri, 0, $pos);
+      }
+
+      return $url . $request_uri . '/';
 }
 
 function request_blocker()

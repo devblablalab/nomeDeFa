@@ -142,7 +142,7 @@ header .container {
 }
 
 #banner-info.active {
-    transform: translateY(0);
+    transform: translateY(-90px);
 }
 
 #banner-info .wrapper {

@@ -4,6 +4,7 @@
     $activeSuggestions = FandomSuggestion::getActiveSuggestions();
 ?>
 <?php include './includes/banner-info.php'; ?>
+<div id="nine"></div>
 <main>
     <div class="form-container">
         <?php include './includes/alert-error.php'; ?>

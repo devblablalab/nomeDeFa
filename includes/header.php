@@ -11,12 +11,13 @@
         select {
             -webkit-appearance: none;
             -moz-appearance: none;
-            appearance: none;
+        appearance: none;
             font-family: sans-serif;
             background: url("<?= get_public() . 'assets/arrow-down.svg' ?>") no-repeat calc(100% - 15px) #5B5B5B  !important;
         }
     </style>
     <link rel="icon" type="image/x-icon" href="<?= get_public() . 'assets/favicon.ico' ?>">
+    <link rel="stylesheet" href="/public/css/teste.css">
     <link rel="stylesheet" href="<?= get_public() . 'css/style.css?ver=1.0.10' ?>">
     <link rel="stylesheet" href="<?= get_public() . 'css/table.css?ver=1.0.10' ?>">
     <link href="<?= get_public() . 'css/tabulator.min.css' ?>" rel="stylesheet">
